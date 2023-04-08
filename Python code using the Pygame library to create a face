@@ -1,0 +1,32 @@
+import pygame
+
+# Initialize Pygame
+pygame.init()
+
+# Set the width and height of the screen
+width, height = 400, 400
+screen = pygame.display.set_mode((width, height))
+
+# Define colors
+black = (0, 0, 0)
+white = (255, 255, 255)
+red = (255, 0, 0)
+
+# Draw a circle for the face
+pygame.draw.circle(screen, white, (200, 200), 150)
+
+# Draw two circles for the eyes
+pygame.draw.circle(screen, black, (140, 140), 30)
+pygame.draw.circle(screen, black, (260, 140), 30)
+
+# Draw a rectangle for the mouth
+pygame.draw.rect(screen, red, (150, 260, 100, 40))
+
+# Update the display
+pygame.display.update()
+
+# Keep the window open until it is closed
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
